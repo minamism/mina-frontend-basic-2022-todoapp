@@ -12,6 +12,7 @@ export const EditButton = ({ onClick }) => {
 };
 
 const Button = styled.button`
+  cursor: pointer;
   border: none;
   border-radius: 50%;
   width: 20px;
