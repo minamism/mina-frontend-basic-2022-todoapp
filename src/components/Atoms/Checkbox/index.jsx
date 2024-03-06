@@ -12,7 +12,6 @@ export const Checkbox = ({ onClick }) => {
 };
 
 const Button = styled.button`
-  box-sizing: content-box;
   padding: 0;
   cursor: pointer;
   background: none;
