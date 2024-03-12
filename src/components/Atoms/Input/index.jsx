@@ -22,21 +22,16 @@ export const Input = ({ onEditComplete, defaultValue }) => {
   }, []);
 
   return (
-    <StyledWrapper>
-      <StyledInput
+      <StyledWrapper
         ref={inputRef}
         defaultValue={defaultValue}
         onBlur={handleBlur}
         onKeyDown={handleKeyDown}
       />
-    </StyledWrapper>
   );
 };
 
-const StyledWrapper = styled.div`
-
-`;
-const StyledInput = styled.input`
+const StyledWrapper = styled.input`
   ${TEXT.S};
   color: ${COLOR.LIGHT_GRAY};
   font-family: ${FONTFAMILY.NOTO_SANS};
