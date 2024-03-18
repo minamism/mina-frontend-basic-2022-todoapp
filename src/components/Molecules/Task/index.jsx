@@ -11,7 +11,7 @@ export const Task = ({
   onTaskNameChange,
   onTaskComplete,
   taskName,
-  defaultIsEditing,
+  defaultIsEditing = false,
 }) => {
   const [isEditing, setIsEditing] = useState(defaultIsEditing);
 
@@ -44,18 +44,22 @@ export const Task = ({
 };
 
 const StyledWrapper = styled.div`
+  width: 100%;
   display: flex;
   padding: 2px 6px;
   height: 20px;
+  align-items: center;
 `;
 
 const StyledCheckboxWrapper = styled.div`
   margin-right: 10px;
+  height: 20px;
 `;
 
 const StyledNameAndButtonWrapper = styled.div`
   display: flex;
   width: 100%;
+  align-items: center;
 `;
 
 const StyledTaskName = styled.div`
@@ -67,4 +71,6 @@ const StyledTaskName = styled.div`
 
 const StyledEditButtonWrapper = styled.div`
   margin-left: 10px;
+  display:flex;
+  align-items: center;
 `;
