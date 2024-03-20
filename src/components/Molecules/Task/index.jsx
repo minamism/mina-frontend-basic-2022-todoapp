@@ -49,6 +49,7 @@ const StyledWrapper = styled.div`
   padding: 2px 6px;
   height: 20px;
   align-items: center;
+  margin-top: 10px;
 `;
 
 const StyledCheckboxWrapper = styled.div`
@@ -60,6 +61,7 @@ const StyledNameAndButtonWrapper = styled.div`
   display: flex;
   width: 100%;
   align-items: center;
+  overflow: hidden;
 `;
 
 const StyledTaskName = styled.div`
@@ -67,6 +69,8 @@ const StyledTaskName = styled.div`
   color: ${COLOR.LIGHT_GRAY};
   font-family: ${FONTFAMILY.NOTO_SANS};
   width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 
 const StyledEditButtonWrapper = styled.div`
