@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Title } from "../../Atoms/Title";
+import { TodoCard } from "../../Organisms/TodoCard"
 import BREAKPOINT from "../../../variables/breakpoint";
 
 
@@ -8,7 +9,9 @@ export const MainPage = () => {
   return (
     <StyledWrapper>
       <Title />
-      <StyledTodoCard></StyledTodoCard>
+      <StyledTodoCard>
+        <TodoCard/>
+      </StyledTodoCard>
     </StyledWrapper>
   );
 };
