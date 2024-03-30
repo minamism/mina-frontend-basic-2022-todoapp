@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { AddTaskButton } from "../../Atoms/AddTaskButton";
 import { Task } from "../../Molecules/Task";
 import COLOR from "../../../variables/color";
 
 export const TodoCard = () => {
-  const [taskList, setTaskList] = useState([]);
+  const [taskList, setTaskList] = useLocalStorage("taskList", []);
 
   const onAddTaskButtonClick = () => {
     // 新しいタスク情報を表すオブジェクト
@@ -33,6 +33,32 @@ export const TodoCard = () => {
       setTaskList(updateTaskList);
     }
   };
+
+
+  // 参考記事　https://qiita.com/Akihiro0711/items/c4658eb1f13bcb846f00
+  function useLocalStorage(key, initialValue) {
+    const [storedValue, setStoredValue] = useState(() => {
+      // LocalStorageからデータを取り出す
+      const item = localStorage.getItem(key);
+      // item が存在すればパースし、なければ initialValue を使う
+      const parsedItem = item ? JSON.parse(item) : initialValue;
+      // 各タスクの initializing プロパティを false に設定する
+      const initializedTasks = parsedItem.map(task => ({
+        ...task,
+        initializing: false
+      }));
+      return initializedTasks;
+    });
+  
+    useEffect(() => {
+      const serializedValue = JSON.stringify(storedValue);
+      // LocalStorageへデータを保存する
+      localStorage.setItem(key, serializedValue);
+    }, [key, storedValue]);
+  
+    return [storedValue, setStoredValue];
+  }
+  
 
   return (
     <StyledWrapper>
