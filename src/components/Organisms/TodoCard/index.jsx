@@ -2,9 +2,11 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { AddTaskButton } from "../../Atoms/AddTaskButton";
 import { Task } from "../../Molecules/Task";
+import { useAlertHandlerContext } from "../../../contexts/alert_handler";
 import COLOR from "../../../variables/color";
 
 export const TodoCard = () => {
+  const AlertHandlerContext = useAlertHandlerContext();
   const [taskList, setTaskList] = useLocalStorage("taskList", []);
 
   const onAddTaskButtonClick = () => {
@@ -27,6 +29,7 @@ export const TodoCard = () => {
     if (value === "") {
       // onTaskCompleteで、消す処理を書いた
       onTaskComplete(changeIndex);
+      AlertHandlerContext.setAlert("タスクの名前が設定されていません。")
     } else {
       const updateTaskList = [...taskList];
       updateTaskList[changeIndex].name = value;
