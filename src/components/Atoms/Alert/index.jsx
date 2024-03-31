@@ -22,12 +22,12 @@ const AlertAll = styled.div`
   margin: 80px auto 0 auto;
   width: 400px;
   transition: all 0.5s ease 0s;
-    visibility: hidden;
-    ${({ alertIsActive }) =>
-        alertIsActive && // alertActiveが true ならば後続の CSS スタイルを適用
-        `
-        visibility: visible;
-    `}
+  visibility: hidden;
+  ${({ alertIsActive }) =>
+      alertIsActive && // alertActiveが true ならば後続の CSS スタイルを適用
+      `
+      visibility: visible;
+  `}
   @media (max-width: ${BREAKPOINT.MEDIUM}) {
     width: auto;
     margin: 40px 20px 0 20px;
