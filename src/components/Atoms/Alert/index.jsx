@@ -22,7 +22,21 @@ const AlertAll = styled.div`
   margin: 80px auto 0 auto;
   width: 400px;
   transition: all 0.5s ease 0s;
+  animation-name: fadein;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
   visibility: hidden;
+  @keyframes  div {
+    0% {
+       opacity: 0;
+       transform: translateY(0);
+    }
+    100% {
+       opacity: 1;
+       transform: translateY(20px);
+    }
+  }
   ${({ alertIsActive }) =>
       alertIsActive && // alertActiveが true ならば後続の CSS スタイルを適用
       `
