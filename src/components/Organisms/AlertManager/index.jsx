@@ -4,8 +4,8 @@ import { Alert } from "../../Atoms/Alert";
 
 export const AlertManager = () => {
   const AlertHandlerContext = useAlertHandlerContext();
-  console.log(AlertHandlerContext.visible);
-  AlertHandlerContext.setAlert("タスクの名前が設定されていません。");
+  // console.log(AlertHandlerContext.visible);
+  // AlertHandlerContext.setAlert("タスクの名前が設定されていません。");
 
   useEffect(() => {
     if(AlertHandlerContext.visible === true){
