@@ -15,10 +15,10 @@ export const AlertHandlerProvider = ({ children }) => {
     });
   };
 
-  const closeAlert = () => {
+  const closeAlert = (errorText) => {
     setAlertState({
       visible: false,
-      errorText: "",
+      errorText: errorText,
     })
   };
 
