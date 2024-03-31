@@ -32,10 +32,11 @@ const AlertAll = styled.div`
   width: 400px;
   transition: all 0.5s ease 0s;
   visibility: hidden;
-  animation: ${fadeIn} 0.5s ease forwards; /* アニメーションを追加 */
+  
   ${({ alertIsActive }) =>
     alertIsActive &&
     `
+      animation: ${fadeIn} 0.5s ease forwards; /* アニメーションを追加 */
       visibility: visible;
   `}
   @media (max-width: ${BREAKPOINT.MEDIUM}) {
