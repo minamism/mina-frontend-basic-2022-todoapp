@@ -21,12 +21,10 @@ const AlertAll = styled.div`
   margin: 80px auto 0 auto;
   width: 400px;
   transition: all 0.5s ease 0s;
-    transform: translate(-50%, -40px);
     visibility: hidden;
     ${({ alertIsActive }) =>
         alertIsActive && // alertActiveが true ならば後続の CSS スタイルを適用
         `
-        transform: translate(-50%, 0px);
         visibility: visible;
     `}
   @media (max-width: ${BREAKPOINT.MEDIUM}) {
