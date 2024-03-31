@@ -18,6 +18,7 @@ const AlertAll = styled.div`
   position: absolute;
   right: 0;
   left: 0;
+  top: 0;
   margin: 80px auto 0 auto;
   width: 400px;
   transition: all 0.5s ease 0s;
