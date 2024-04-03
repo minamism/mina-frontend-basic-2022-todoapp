@@ -1,26 +1,17 @@
 import React from "react";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import COLOR from "../../../variables/color";
 import BREAKPOINT from "../../../variables/breakpoint";
 import FONTFAMILY from "../../../variables/font_family";
 import TEXT from "../../../variables/texts";
 
-export const Alert = ({ isActive, context }) => {
-  return (
+export const Alert = ({isActive, context}) => {
+  return(
     <AlertAll alertIsActive={isActive}>
       <AlertText>{context}</AlertText>
     </AlertAll>
   );
 };
-
-const fadeIn = keyframes`
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-`;
 
 const AlertAll = styled.div`
   ${TEXT.S}
@@ -31,13 +22,14 @@ const AlertAll = styled.div`
   margin: 80px auto 0 auto;
   width: 400px;
   transition: all 0.5s ease 0s;
+  transform: translate(-50%, -40px);
   visibility: hidden;
-  
   ${({ alertIsActive }) =>
-    alertIsActive &&
-    `
-      animation: ${fadeIn} 0.5s ease forwards; /* アニメーションを追加 */
+      alertIsActive && // alertActiveが true ならば後続の CSS スタイルを適用
+      `
       visibility: visible;
+      transform: translate(-50%, 0px);
+      
   `}
   @media (max-width: ${BREAKPOINT.MEDIUM}) {
     width: auto;
