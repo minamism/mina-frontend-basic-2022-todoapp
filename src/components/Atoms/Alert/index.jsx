@@ -28,10 +28,9 @@ const AlertAll = styled.div`
   ${({ alertIsActive }) =>
       alertIsActive && // alertActiveが true ならば後続の CSS スタイルを適用
       `
-      visibility: visible;
-      opacity: 1;
       transform: translate(0px, 0px);
-      
+      opacity: 1;
+      visibility: visible;
   `}
   @media (max-width: ${BREAKPOINT.MEDIUM}) {
     width: auto;
