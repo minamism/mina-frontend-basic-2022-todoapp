@@ -23,11 +23,13 @@ const AlertAll = styled.div`
   width: 400px;
   transition: all 0.5s ease 0s;
   transform: translate(0px, -40px);
+  opacity: 0;
   visibility: hidden;
   ${({ alertIsActive }) =>
       alertIsActive && // alertActiveが true ならば後続の CSS スタイルを適用
       `
       visibility: visible;
+      opacity: 1;
       transform: translate(0px, 0px);
       
   `}
